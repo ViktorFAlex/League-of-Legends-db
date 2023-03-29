@@ -1,14 +1,47 @@
+@font-face {
+  font-family: 'Spiegel';
+  src: url('./fonts/Spiegel-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('./fonts/Spiegel-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('./fonts/Spiegel-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url('./fonts/Beaufort-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url('./fonts/Beaufort-Heavy.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url('./fonts/Beaufort-Regular.ttf');
+  font-weight: 400;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
+  --font-main: 'Beaufort', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Noto Color Emoji';
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #16abff33 0deg,
@@ -17,10 +50,7 @@
     #0071ff33 160deg,
     transparent 360deg
   );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
@@ -87,12 +117,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #CDFAFA;
+  font-family: var(--font-main) !important;
 }
 
 a {

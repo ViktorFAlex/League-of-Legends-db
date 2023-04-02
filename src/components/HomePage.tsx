@@ -119,7 +119,7 @@ const MainDescription = () => {
                       },
                     }}
                   >
-                    <Link href={route}> {description}</Link>
+                    <Link href={route}>{description}</Link>
                   </Typography>
                 </Box>
               );

@@ -2,6 +2,7 @@ import { Container, Button } from '@mui/material';
 import DefaultLayout from './DefaultLayout';
 import { styled } from '@mui/material/styles';
 import Link from 'next/link';
+import HomePageLink from './HomePageLink';
 
 const StyledButton = styled(Button)`
   color: #111;
@@ -16,7 +17,8 @@ const ContentLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <DefaultLayout>
           <Container sx={{
-            display: 'flex', 
+            display: 'flex',
+            position: 'relative',
             flexDirection: 'column',
             justifyContent: 'center',
             alignContent: 'center', 
@@ -24,7 +26,7 @@ const ContentLayout = ({ children }: { children: React.ReactNode }) => {
             height: '100%',
             }}>
             {children}
-            <StyledButton><Link href={'/'}>Home</Link></StyledButton>
+            <HomePageLink />
           </Container>
         </DefaultLayout>
     )

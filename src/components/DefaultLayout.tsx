@@ -2,6 +2,7 @@ import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
 import styles from '@/styles/Home.module.css';
+import HomePageLink from '@/components/HomePageLink';
 
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   return (

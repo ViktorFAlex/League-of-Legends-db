@@ -7,12 +7,24 @@
     background-color: #C8AA6E;
     border: 2px solid #000;
     box-shadow: 0 0 10px #785A28;
-    padding: 0.25rem;
+    padding: 0.5rem;
 }
 
 .modalHeader {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3C3C41;
 }
 
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25rem;
+}
+
+.closeBtn:hover {
+    color: #010A13;
+}

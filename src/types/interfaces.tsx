@@ -20,3 +20,22 @@ export interface SpellsModal {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   item: SpellsData;
 }
+
+export interface RuneDescription {
+  icon: string;
+  id: number;
+  name: string;
+  longDesc: string;
+}
+
+export interface RunesTier {
+  runes: RuneDescription[];
+}
+
+export interface RunesData {
+  icon: string;
+  id: number;
+  name: string;
+  slots: RunesTier[];
+}
+

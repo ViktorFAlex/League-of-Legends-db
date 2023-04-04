@@ -10,7 +10,6 @@ import { SpellsData } from '@/types/interfaces';
 import { styled } from '@mui/material/styles';
 import SpellsPageTitle from '@/components/SpellsPageTitle';
 
-
 const StyledButton = styled(Button)`
 width: 100%;
 display: flex;
@@ -28,8 +27,6 @@ const StyledSpellName = styled(Typography)({
   'color': 'var(--blue-1)',
   'padding-left': '1rem',
 });
-  
-
 
 const StyledGridCard = styled(Card)`
 width: 100%;
@@ -39,9 +36,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 `;
-
-
-
 
 type data = [string, SpellsData];
 

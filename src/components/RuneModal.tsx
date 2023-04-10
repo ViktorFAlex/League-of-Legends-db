@@ -4,13 +4,15 @@ import { styled } from '@mui/material/styles';
 import Image from 'next/image';
 
 import styles from '@/components/Modal.module.css';
-import { SpellModalProps } from '@/types/interfaces';
+import apiRoutes from '@/routes';
+import { RuneModalProps } from '@/types/interfaces';
 
 const StyledTypography = styled(Typography)({
   marginTop: '1rem',
+  fontWeight: 700,
 });
 
-const SpellModal = ({ open, setOpen, item }: SpellModalProps) => {
+const RuneModal = ({ open, setOpen, item }: RuneModalProps) => {
   return (
     <Modal
       open={open}
@@ -27,32 +29,26 @@ const SpellModal = ({ open, setOpen, item }: SpellModalProps) => {
       }}
     >
       <Fade in={open}>
-        <Box className={styles.modalContainer}>
+        <Box className={`${styles.modalContainer} ${styles.runesModalContainer}`}>
           <IconButton onClick={() => setOpen(false)} className={styles.closeBtn} disableRipple>
             <CloseIcon />
           </IconButton>
-          <Box className={styles.modalHeader}>
-            <Image src={item.imgUrl} width={100} height={100} alt={item.name} />
+          <Box className={`${styles.modalHeader} ${styles.runesModalHeader}`}>
+            <Image
+              src={apiRoutes.runesReforged.image(item.icon).toString()}
+              width={75}
+              height={75}
+              alt={item.name}
+            />
             <Typography variant='h6' component='h2' sx={{ marginLeft: '1rem' }}>
               {item.name}
             </Typography>
-            <Box sx={{ margin: 'auto 0 0 auto' }}>
-              <Typography>
-                <b>Range:</b> {item.rangeBurn}
-              </Typography>
-              <Typography>
-                <b>Cooldown:</b> {item.cooldownBurn}
-              </Typography>
-            </Box>
           </Box>
-          <StyledTypography>{item.description}</StyledTypography>
-          <StyledTypography>
-            <b>Modes:</b> {item.modes.join(', ')}
-          </StyledTypography>
+          <StyledTypography variant='body2' dangerouslySetInnerHTML={{ __html: item.longDesc }} />
         </Box>
       </Fade>
     </Modal>
   );
 };
 
-export default SpellModal;
+export default RuneModal;

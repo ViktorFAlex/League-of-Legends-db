@@ -1,9 +1,7 @@
-const jsonRoute = 'http://ddragon.leagueoflegends.com/cdn/13.6.1/data/';
+const jsonRoute = 'http://ddragon.leagueoflegends.com/cdn/13.7.1/data/';
 const championRoute = 'https://ddragon.leagueoflegends.com/cdn/img/';
-const assetsRoute = 'https://ddragon.leagueoflegends.com/cdn/13.6.1/img/';
+const assetsRoute = 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/';
 const runesImgRoute = 'https://ddragon.canisback.com/img/';
-
-// champion, item, runesReforged, summoner
 
 const apiRoutes = {
   json: (lang: string, name: string) => new URL(`${lang}/${name}.json`, jsonRoute),

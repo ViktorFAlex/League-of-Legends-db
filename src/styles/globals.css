@@ -37,26 +37,25 @@
 :root {
   --font-main: 'Beaufort', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Noto Color Emoji';
-  --blue-1: #CDFAFA;  /* https: //brand.riotgames.com/en-us/league-of-legends/color */
-  --blue-2: #0AC8B9;
-  --blue-3: #0397AB;
-  --blue-4: #005A82;
-  --blue-5: #0A323C;
+  --blue-1: #cdfafa; /* https: //brand.riotgames.com/en-us/league-of-legends/color */
+  --blue-2: #0ac8b9;
+  --blue-3: #0397ab;
+  --blue-4: #005a82;
+  --blue-5: #0a323c;
   --blue-6: #091428;
-  --blue-7: #0A1428;
-  --gold-1: #F0E6D2;
-  --gold-2: #C8AA6E;
-  --gold-4: #C89B3C;
-  --gold-5: #785A28;
+  --blue-7: #0a1428;
+  --gold-1: #f0e6d2;
+  --gold-2: #c8aa6e;
+  --gold-4: #c89b3c;
+  --gold-5: #785a28;
   --gold-6: #463714;
-  --gold-7: #32281E;
-  --grey-1: #A09B8C;
-  --grey-1_5: #5B5A56;
-  --grey-2: #3C3C41;
-  --grey-3: #1E2328;
-  --grey-cool: #1E282D;
-  --hextech-black: #010A13;
-
+  --gold-7: #32281e;
+  --grey-1: #a09b8c;
+  --grey-1_5: #5b5a56;
+  --grey-2: #3c3c41;
+  --grey-3: #1e2328;
+  --grey-cool: #1e282d;
+  --hextech-black: #010a13;
 }
 
 * {

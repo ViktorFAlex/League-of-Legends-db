@@ -1,35 +1,24 @@
-import { Container, Button } from '@mui/material';
-import DefaultLayout from './DefaultLayout';
+import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Link from 'next/link';
-import HomePageLink from './HomePageLink';
 
-const StyledButton = styled(Button)`
-  color: #111;
-  padding: 0;
-  margin: 0 10px 0 10px;
-  &:hover {
-    opacity: 0.7;
-  }
-`;
+import DefaultLayout from './DefaultLayout';
+
+const ContentLayoutContainer = styled(Container)({
+  display: 'flex',
+  position: 'relative',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignContent: 'center',
+  width: '100%',
+  height: '100%',
+});
 
 const ContentLayout = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <DefaultLayout>
-          <Container sx={{
-            display: 'flex',
-            position: 'relative',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignContent: 'center', 
-            width: '100%', 
-            height: '100%',
-            }}>
-            {children}
-            <HomePageLink />
-          </Container>
-        </DefaultLayout>
-    )
+  return (
+    <DefaultLayout>
+      <ContentLayoutContainer>{children}</ContentLayoutContainer>
+    </DefaultLayout>
+  );
 };
 
 export default ContentLayout;

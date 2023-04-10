@@ -1,84 +1,82 @@
-import apiRoutes from '@/routes';
 import axios from 'axios';
-import { useState } from 'react';
 import { Tabs, Tab, Typography, Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { useState } from 'react';
+
 import ContentLayout from '@/components/ContentLayout';
 import RuneTabTitle from '@/components/RuneTabTitle';
 import RuneTabPanel from '@/components/RuneTabPanel';
+import apiRoutes from '@/routes';
 import { RunesData } from '@/types/interfaces';
-import { styled } from '@mui/material/styles';
 
 const StyledTabs = styled(Tabs)({
+  background: 'var(--blue-5)',
+  'border-radius': '10px 0 0 10px',
   '& .MuiTabs-scroller .MuiTabs-flexContainer': {
-    '& > button:not(:last-child):after': {
-      'content': '""',
-      'position': 'absolute',
-      'bottom': '0',
-      'height': '2px',
-      'width': '80%',
-      'border-top': '2px solid #000'
+    '& > button': {
+      '&:hover': {
+        opacity: '0.7',
+      },
     },
-  }
+  },
 });
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-interface TabPanel {
-  children: React.ReactNode;
-}
+const StyledRunePageTitle = styled(Typography)({
+  textAlign: 'center',
+  paddingBottom: '0.8rem',
+  fontWeight: 700,
+  color: 'var(--gold-1)',
+});
 
 const a11yProps = (index: number) => {
   return {
     id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
   };
-}
+};
 
-const Spells = ({data}: { data: RunesData[]}) => {
+const Spells = ({ data }: { data: RunesData[] }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   return (
     <ContentLayout>
-      <Box
-      sx={{  bgcolor: 'var(--gold-1)', display: 'flex'}}
-    >
-      <StyledTabs
-        orientation="vertical"
-        variant='scrollable'
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs"
-      >
-        {data.map((item, index) => (
-          <Tab key={item.id} 
-          label={
-            <RuneTabTitle 
-              item={item}
+      <StyledRunePageTitle variant='h5'>Runes Page</StyledRunePageTitle>
+      <Box sx={{ bgcolor: '#eee', display: 'flex', borderRadius: '10px' }}>
+        <StyledTabs
+          orientation='vertical'
+          variant='scrollable'
+          value={value}
+          onChange={handleChange}
+          aria-label='Vertical tabs'
+          TabIndicatorProps={{
+            style: {
+              background: 'var(--grey-cool)',
+            },
+          }}
+        >
+          {data.map((item, index) => (
+            <Tab
+              key={item.id}
+              sx={
+                index === value
+                  ? { background: 'var(--hextech-black)', '& > *': { color: 'blue' } }
+                  : {}
+              }
+              label={<RuneTabTitle item={item} index={index} value={value} />}
+              {...a11yProps(index)}
             />
-          } 
-          {...a11yProps(index)}
-          />
-        ))
-        }
-      </StyledTabs>
+          ))}
+        </StyledTabs>
         {data.map((item, index) => (
-          <RuneTabPanel 
-            key={`panel-${item.id}`} 
-            runes={item.slots} 
-            index={index} 
-            value={value}
-          />
+          <RuneTabPanel key={`panel-${item.id}`} runes={item.slots} index={index} value={value} />
         ))}
-    </Box>
+      </Box>
     </ContentLayout>
-  )
+  );
 };
 
 export default Spells;

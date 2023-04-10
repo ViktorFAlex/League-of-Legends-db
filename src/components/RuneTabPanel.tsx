@@ -21,11 +21,10 @@ const RuneTabPanel = ({ index, value, runes }: TabPanelProps) => {
       {value === index && (
         <Box 
           sx={{
-            p: 3, 
             height: '100%', 
             display: 'flex', 
             flexDirection: 'column', 
-            justifyContent: 'space-between',
+            justifyContent: 'space-evenly',
           }}
         >
           {runes.map((row, id) => <RuneTabPanelRow key={`row-${id}`} row={row.runes} />)}

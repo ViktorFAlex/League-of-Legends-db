@@ -28,3 +28,11 @@
 .closeBtn:hover {
     color: #010A13;
 }
+
+.runesModalContainer {
+    background: #eee;
+}
+
+.runesModalHeader {
+    justify-content: center;
+}

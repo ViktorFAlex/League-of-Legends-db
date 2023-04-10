@@ -1,7 +1,7 @@
-import '@/styles/globals.css';
-import NextNProgress from 'nextjs-progressbar';
 import type { AppProps } from 'next/app';
+import NextNProgress from 'nextjs-progressbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import '@/styles/globals.css';
 
 const theme = createTheme({
   typography: {
@@ -13,15 +13,15 @@ const theme = createTheme({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ThemeProvider theme={theme}>
-      <NextNProgress
-        color='linear-gradient(90deg, #b656cb, #10a1a0)'
-        height={5}
-        options={{ showSpinner: false }}
-      />
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
-}
+const App = ({ Component, pageProps }: AppProps) => (
+  <ThemeProvider theme={theme}>
+    <NextNProgress
+      color='linear-gradient(90deg, #b656cb, #10a1a0)'
+      height={5}
+      options={{ showSpinner: false }}
+    />
+    <Component {...pageProps} />
+  </ThemeProvider>
+);
+
+export default App;

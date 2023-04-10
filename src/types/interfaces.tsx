@@ -15,9 +15,12 @@ export interface SpellsData {
   imgUrl: string;
 }
 
-export interface SpellsModal {
+interface ModalProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface SpellModalProps extends ModalProps {
   item: SpellsData;
 }
 
@@ -39,3 +42,43 @@ export interface RunesData {
   slots: RunesTier[];
 }
 
+export interface RuneModalProps extends ModalProps {
+  item: RuneDescription;
+}
+
+interface ItemType {
+  header: string;
+  tags: string[];
+}
+
+interface ItemGold {
+  base: number;
+  purchasable: boolean;
+  total: number;
+  sell: number;
+}
+
+interface ItemImages {
+  full: string;
+  h: number;
+  w: number;
+}
+
+interface Item {
+  from: string[];
+  gold: ItemGold;
+  image: ItemImages;
+  name: string;
+  plaintext: string;
+  description: string;
+  tags: string[];
+}
+
+interface Items {
+  [key: number]: Item;
+}
+
+export interface ItemsData {
+  data: Items;
+  tree: ItemType[];
+}

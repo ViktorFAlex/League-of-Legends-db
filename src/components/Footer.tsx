@@ -1,33 +1,36 @@
-import { AppBar, Toolbar, Typography, Button, IconButton, Link } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import { AppBar, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const StyledLink = styled(Link)`
-  color: #111;
-  padding: 0;
-  margin: 0 10px 0 10px;
-  &:hover {
-    opacity: 0.7;
-  }
-`;
+type StyledFooterProps = {
+  component: 'footer';
+} & React.ComponentProps<typeof AppBar>;
+
+const StyledFooter = styled(AppBar)<StyledFooterProps>({
+  top: 'auto',
+  bottom: 0,
+  height: '6vh',
+  backgroundColor: 'var(--grey-1)',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
+const StyledLink = styled(Link)({
+  color: 'var(--hextech-black)',
+  padding: 0,
+  margin: '0 10px 0 10px',
+  '&:hover': {
+    opacity: 0.7,
+  },
+});
 
 const Footer = () => {
   return (
-    <AppBar
-      sx={{
-        top: 'auto',
-        bottom: '0',
-        height: '6vh',
-        backgroundColor: '#A09B8C',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-      component='footer'
-    >
+    <StyledFooter component='footer'>
       <StyledLink href='https://github.com/ViktorFAlex/'>
         <GitHubIcon />
       </StyledLink>
@@ -37,7 +40,7 @@ const Footer = () => {
       <StyledLink href='https://t.me/FAViktor'>
         <TelegramIcon />
       </StyledLink>
-    </AppBar>
+    </StyledFooter>
   );
 };
 

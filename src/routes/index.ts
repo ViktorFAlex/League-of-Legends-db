@@ -14,7 +14,7 @@ const apiRoutes = {
     spell: (spell: string) => new URL(`spell/${spell}.png`, assetsRoute),
   },
   item: {
-    image: (id: number) => new URL(`item/${id}.png`, assetsRoute),
+    image: (id: string) => new URL(`item/${id}`, assetsRoute),
   },
   summoner: {
     spell: (spell: string) => new URL(`spell/${spell}.png`, assetsRoute),

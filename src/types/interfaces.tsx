@@ -64,7 +64,11 @@ interface ItemImages {
   w: number;
 }
 
-interface Item {
+interface ItemMaps {
+  [index: number]: boolean;
+}
+
+export interface Item {
   from: string[];
   gold: ItemGold;
   image: ItemImages;
@@ -72,6 +76,8 @@ interface Item {
   plaintext: string;
   description: string;
   tags: string[];
+  inStore?: false;
+  maps: ItemMaps;
 }
 
 interface Items {

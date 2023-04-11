@@ -25,7 +25,7 @@ const Header = () => (
   <AppBar sx={{ background: 'var(--hextech-black)' }}>
     <StyledToolbar>
       <StyledLink href={'/'}>
-        <Image src={image} alt='challenger icon' width={40} height={40} />
+        <Image src={image} alt='challenger icon' width={40} height={40} priority />
         <StyledTitle variant='h5'>League of legends database</StyledTitle>
       </StyledLink>
     </StyledToolbar>
